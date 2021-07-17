@@ -26,4 +26,8 @@ class BlogController extends Controller
 
         return view('blog.detail',['blog' => $blog]);
     }
+
+    public function showCreate() {
+        return view('blog.form');
+    }
 }
