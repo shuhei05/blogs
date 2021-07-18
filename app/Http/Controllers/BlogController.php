@@ -59,12 +59,16 @@ class BlogController extends Controller
         \DB::beginTransaction();
         try {
         $blog = Blog::find($inputs['id']);
+        $blog->fill([
+                    'title' => $inputs['title'],
+                    'content' => $inputs['content'],]);
+        $blog->save();
         \DB::commit();
         } catch(\Throwable $e) {
             \DB::rollback();
             abort(500);
         }
-        \Session::flash('err_msg','ブログを投稿しました');
+        \Session::flash('err_msg','ブログを更新しました');
             return redirect(route('blogs'));
     }
 }
