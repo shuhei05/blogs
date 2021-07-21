@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\BlogController@showList')->name
+Route::get('/', 'App\Http\Controllers\BlogController@showList')
+->name
 ('blogs');
 
 Route::get('/blog/create', 'App\Http\Controllers\BlogController@showCreate')->name
