@@ -31,3 +31,6 @@ Route::get('/blog/edit/{id}', 'App\Http\Controllers\BlogController@showEdit')->n
 
 Route::post('/blog/update', 'App\Http\Controllers\BlogController@exeUpdate')->name
 ('update');
+
+Route::post('/blog/delete/{id}', 'App\Http\Controllers\BlogController@exeDelete')->name
+('delete');

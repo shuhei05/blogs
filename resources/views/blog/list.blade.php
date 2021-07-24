@@ -2,7 +2,7 @@
 @section('title','ブログ一覧')
 @section('content')
 <div class="row">
-  <div class="col-md-12 col-md-offset-2">
+  <div class="col-md-10 col-md-offset-2">
       <h2>ブログ記事一覧</h2>
       @if (session('err_msg'))
             <p class="text-danger">
@@ -32,4 +32,13 @@
       </table>
  </div>
 </div>
+<script>
+function checkDelete(){
+if(window.confirm('削除してよろしいですか？')){
+    return true;
+} else {
+    return false;
+}
+}
+</script>
 @endsection
